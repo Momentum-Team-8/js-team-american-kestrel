@@ -77,28 +77,28 @@ At the end of each shift, add, commit, and push all the code that has been writt
 - driver: Dee
 - navigator: Sara
 - moderator: Robert
-- scout: Logan
+- scout: Shaune
 - contributor: Greg
 
 #### shift 2
 
 - driver: Sara
 - navigator: Robert
-- moderator: Logan
+- moderator: Shaune
 - scout: Greg
 - contributors: Dee
 
 #### shift 3
 
 - driver: Robert
-- navigator: Logan
+- navigator: Shaune
 - moderator: Greg
 - scout: Dee
 - contributors: Sara
 
 #### shift 4
 
-- driver: Logan
+- driver: Shaune
 - navigator: Greg
 - moderator: Dee
 - scout: Sara
@@ -110,6 +110,6 @@ At the end of each shift, add, commit, and push all the code that has been writt
 - navigator: Dee
 - moderator: Sara
 - scout: Robert
-- contributors: Logan
+- contributors: Shaune
 
 #### shift 6 -> start over at shift 1
