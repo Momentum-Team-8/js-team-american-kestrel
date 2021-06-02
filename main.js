@@ -1,6 +1,7 @@
 // Create variable where we assign the url to the variable.
 const url = 'http://localhost:3000/movies'
 const form = document.querySelector("#movie-form")
+const allMovies = document.querySelector("#movie-list")
 
 // Create a function that lists the movies.
 function movieList(movie) {
@@ -37,9 +38,10 @@ form.addEventListener('submit', event => {
 function renderMovieItem(movieObj) {
 const  movieItem = document.createElement("li")
 movieItem.id = movieObj.id
-movieItem.classList.add(
+movieItem.classList.add()
+movieItem.innerText = `${movieObj.title}`
+allMovies.appendChild(movieItem)
 
-)
 console.log(movieItem)
 }
 
