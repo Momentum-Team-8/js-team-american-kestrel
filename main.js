@@ -15,7 +15,7 @@ const url = 'http://localhost:3000/movies'
 // Create a function that creates a movie. 
 function createMovie() {
 const  movieItem = document.createElement("li")
-movieItem.setAttribute (".id",)
+movieItem.setAttribute (".id", movies.id) 
 }
 
 // Create addEventListener to form submit button.
