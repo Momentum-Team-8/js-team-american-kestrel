@@ -1,14 +1,15 @@
 // Create variable where we assign the url to the variable.
 const url = 'http://localhost:3000/movies'
+const form = document.querySelector("#movie-form")
 
 // Create a function that lists the movies.
-function movieList() {
+function movieList(movie) {
     fetch(url, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            title: movieText,
-            body: movieText,
+            title: movie,
+            body: movie,
             create_at: moment().format() 
         })
     })
@@ -16,7 +17,12 @@ function movieList() {
     .then(data => renderMovieItem(data))
 }
 
-
+form.addEventListener('submit', event => {
+    event.preventDefault()
+    const movieText = document.getElementById('movie-title').value
+    console.log(movieText)
+    movieList(movieText)
+})
 
 
 //     .then((response) => response.json())
@@ -28,17 +34,13 @@ function movieList() {
 // }
 
 // Create a function that creates a movie. 
-<<<<<<< HEAD
-function createMovie() {
+function renderMovieItem(movieObj) {
 const  movieItem = document.createElement("li")
-movieItem.setAttribute (".id", movies.id) 
+movieItem.id = movieObj.id
+movieItem.classList.add(
+
+)
+console.log(movieItem)
 }
-=======
-// const createMovie = () 
-// {
-// const  movieItem = document.createElement("li")
-// movieItem.setAttribute("id", movies.id)
-// }
->>>>>>> 19341e594dbe3e0f32ebc2eb084609039f7d1433
 
 // Create addEventListener to form submit button.
