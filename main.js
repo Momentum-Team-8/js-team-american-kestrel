@@ -40,7 +40,7 @@ fetch(url)
 // Create a function that creates a movie. 
 function renderMovieItem(movieObj) {
 const  movieItem = document.createElement("li")
-movieItem.id = movieObj.id
+movieItem.id = movieObj.title
 movieItem.classList.add()
 movieItem.innerText = `${movieObj.title}`
 allMovies.appendChild(movieItem)
@@ -48,8 +48,17 @@ allMovies.appendChild(movieItem)
 // watchedButton.innerHTML="<input type='checkbox' onclick='changeText(watched)' value='checked'/>";
 movieItem.insertAdjacentHTML('afterend', `<button name="name" value="checked" id=${movieObj.id}>Watched</button>`)
 document.getElementById(`${movieObj.id}`).addEventListener('click', event => {
+    console.log("button clicked")
     event.preventDefault()
-    document.getElementById(`${movieObj.id}`).innerText = 'Watched On' + moment.format("DD MM YYYY")
+    fetch(url +  `/${movieObj.id}`,  {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            id: movieObj.id,
+            watched: moment().format() 
+        })
+    })
+    .then(() => document.getElementById(`${movieObj.id}`).innerText = 'Watched On' + movieObj.watched)
       });
 
 }
