@@ -19,6 +19,7 @@ function movieList(movie) {
     .then(data => renderMovieItem(data))
 }
 
+// 1. Create method to post movie item when submit button clicked
 form.addEventListener('submit', event => {
     event.preventDefault()
     const movieText = document.getElementById('movie-title').value
@@ -43,16 +44,18 @@ movieItem.id = movieObj.id
 movieItem.classList.add()
 movieItem.innerText = `${movieObj.title}`
 allMovies.appendChild(movieItem)
-const checkbox = document.createElement('input');
-checkbox.type = "checkbox";
-checkbox.name = "name";
-checkbox.value = "checked";
-checkbox.id = movieObj.id;
 
 // watchedButton.innerHTML="<input type='checkbox' onclick='changeText(watched)' value='checked'/>";
-movieItem.insertAdjacentHTML('afterend', 
-'<button name="name" value="checked" id="c-box">Watched</button>')
+movieItem.insertAdjacentHTML('afterend', `<button name="name" value="checked" id=${movieObj.id}>Watched</button>`)
+document.getElementById(`${movieObj.id}`).addEventListener('click', event => {
+    event.preventDefault()
+    document.getElementById(`${movieObj.id}`).innerText = 'Watched On' + moment.format("DD MM YYYY")
+      });
+
 }
+
+
+
 
 
 
